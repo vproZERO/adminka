@@ -11,7 +11,8 @@ export default {
         primaryOpacity: "#6C6DE5",
         secondary: "#1BC58D",
         title: "#212121",
-        text: "#B5B5C3"
+        text: "#B5B5C3",
+        red: "#F1419D"
       }
     },
   },
