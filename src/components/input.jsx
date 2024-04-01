@@ -41,7 +41,6 @@ const Input = React.forwardRef(
           name={name}
           onChange={onChange}
           value={value}
-          required={true}
           ref={ref}
           defaultValue={defaultValue}
           {...props}

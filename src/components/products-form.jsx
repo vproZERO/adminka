@@ -10,7 +10,6 @@ const schema = zod.object({
   brand: zod.string().min(1, "The brand is required"),
   code: zod.string().min(1, "The code is required"),
   country: zod.string().min(1, "The country is required"),
-  tax: zod.string().min(1, "The tax is required"),
   description: zod.string().min(1, "The description is required"),
   weight: zod.string().min(1, "The weight is required"),
   length: zod.string().min(1, "The length is required"),
@@ -25,11 +24,13 @@ const schema = zod.object({
 });
 
 const ProductsForm = ({ submit, invalidateValue }) => {
+
+  const {id,tax,...value} = invalidateValue ? invalidateValue : {};
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({resolver: zodResolver(schema),defaultValues:{...value}});
   return (
     <div className="w-full h-full rounded-[12px] bg-white px-6 pb-10 pt-28 ">
       <form

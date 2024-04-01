@@ -71,7 +71,7 @@ const MainLayout = () => {
         <header>
           <Header />
         </header>
-        <main className="p-10 ">
+        <main className="p-10 overflow-y-scroll h-[90%]">
           <Outlet />
         </main>
         <Footer />
