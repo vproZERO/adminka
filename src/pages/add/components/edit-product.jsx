@@ -9,15 +9,15 @@ import useGetSingleProduct from "../service/query/useGetSingleProduct";
 const EditProduct = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { data ,isLoading} = useGetSingleProduct(id);
+  const { data, isLoading } = useGetSingleProduct(id);
   const { mutate } = useEditProduct(id);
-  
+
   const client = useQueryClient();
 
   const submit = (data) => {
     mutate(data, {
       onSuccess: () => {
-        toast.success("Product updated");
+        toast.info("Product updated");
         client.invalidateQueries({ queryKey: ["single-product", id] });
         navigate("/products");
       },
@@ -26,8 +26,11 @@ const EditProduct = () => {
 
   return (
     <div>
-      {isLoading ? "Loading..." :  <ProductsForm invalidateValue={data} submit={submit} />}
-     
+      {isLoading ? (
+        "Loading..."
+      ) : (
+        <ProductsForm invalidateValue={data} submit={submit} />
+      )}
     </div>
   );
 };

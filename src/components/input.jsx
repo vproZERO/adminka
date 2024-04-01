@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import ErrorIcon from "../assets/icon/error-icon";
 
 const Input = React.forwardRef(
   (
@@ -23,9 +24,14 @@ const Input = React.forwardRef(
     ref
   ) => {
     return (
-      <div className={clsx('w-full' , type === 'radio' && 'flex items-center gap-3')}>
+      <div
+        className={clsx(
+          "w-full relative",
+          type === "radio" && "flex items-center gap-3"
+        )}
+      >
         {label && <label htmlFor={id}>{label}</label>}
-        
+
         <input
           className={clsx(
             "border  placeholder:text-primary py-1 px-3 flex items-center gap-4 rounded outline-primary w-full",
@@ -45,7 +51,16 @@ const Input = React.forwardRef(
           defaultValue={defaultValue}
           {...props}
         />
-        {type === 'radio' && <label className='text-title font-semibold' htmlFor={id}>{radioLabel}</label>}
+        {error && (
+          <div className="absolute top-[40%] right-2">
+            <ErrorIcon />
+          </div>
+        )}
+        {type === "radio" && (
+          <label className="text-title font-semibold" htmlFor={id}>
+            {radioLabel}
+          </label>
+        )}
         {helperText && <p className="text-red text-sm">{helperText}</p>}
       </div>
     );

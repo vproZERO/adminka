@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ mutate }) => {
   const { data } = useGetProducts();
-  const client = useQueryClient()
+  const client = useQueryClient();
 
   const deleteItem = (id) => {
     mutate(id, {
       onSuccess: () => {
-        toast.success("Product deleted");
-        client.invalidateQueries({queryKey:['product']})
+        toast.error("Product deleted");
+        client.invalidateQueries({ queryKey: ["product"] });
       },
       onError: (e) => {
         toast.error(e.message);
@@ -48,14 +48,19 @@ const ProductCard = ({ mutate }) => {
               <th scope="row" className="px-6 py-4 font-extrabold text-title">
                 {item.title}
               </th>
-              <td className="px-6 py-4 text-title font-semibold">{item.color}</td>
-              <td className="px-6 py-4 text-title font-semibold">{item.country}</td>
-              <td className="px-6 py-4 text-title font-semibold">${item.price}</td>
+              <td className="px-6 py-4 text-title font-semibold">
+                {item.color}
+              </td>
+              <td className="px-6 py-4 text-title font-semibold">
+                {item.country}
+              </td>
+              <td className="px-6 py-4 text-title font-semibold">
+                ${item.price}
+              </td>
               <td className="flex items-center gap-2 py-4 pr-6 justify-end">
                 <Button className={"p-2 bg-[#F7F7FF]"}>
                   <Link to={`/add/edit/${item.id}`}>
-                  
-                  <ProductEditIcon />
+                    <ProductEditIcon />
                   </Link>
                 </Button>
                 <Button

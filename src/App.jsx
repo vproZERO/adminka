@@ -18,9 +18,9 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="products" element={<Products />} />
           <Route path="payments" element={<Payments />} />
-          
+
           <Route path="add" element={<Add />} />
-          <Route path="add/edit/:id" element={<EditProduct/>}/>
+          <Route path="add/edit/:id" element={<EditProduct />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />

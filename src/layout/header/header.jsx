@@ -8,7 +8,7 @@ import Button from "../../components/button";
 const Header = () => {
   const location = useLocation();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const exit = () => {
     Cookies.remove("user_token");

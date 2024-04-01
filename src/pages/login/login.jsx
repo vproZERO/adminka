@@ -36,9 +36,7 @@ const Login = () => {
       <div className="backdrop-blur-sm bg-white/30 rounded py-7 px-9">
         <div>
           <h1 className="text-3xl font-bold text-white text-start">Login</h1>
-          <form
-            onSubmit={handleSubmit(submit)}
-          >
+          <form onSubmit={handleSubmit(submit)}>
             <div className="mb-3">
               <input
                 className="bg-inherit w-full border border-gray-500 text-gray-500 placeholder:text-gray-500 rounded-lg py-1 px-2 outline-blue-600 focus:placeholder:text-blue-600 focus:text-blue-600"

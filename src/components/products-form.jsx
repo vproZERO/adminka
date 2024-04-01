@@ -24,13 +24,12 @@ const schema = zod.object({
 });
 
 const ProductsForm = ({ submit, invalidateValue }) => {
-
-  const {id,tax,...value} = invalidateValue ? invalidateValue : {};
+  const { id, tax, ...value } = invalidateValue ? invalidateValue : {};
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({resolver: zodResolver(schema),defaultValues:{...value}});
+  } = useForm({ resolver: zodResolver(schema), defaultValues: { ...value } });
   return (
     <div className="w-full h-full rounded-[12px] bg-white px-6 pb-10 pt-28 ">
       <form
