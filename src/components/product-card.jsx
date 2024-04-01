@@ -35,7 +35,7 @@ const ProductCard = ({ mutate }) => {
               Color
             </th>
             <th scope="col" className="px-6 py-3">
-              Country
+              Image
             </th>
             <th scope="col" className="px-6 py-3">
               Price
@@ -51,11 +51,11 @@ const ProductCard = ({ mutate }) => {
               <td className="px-6 py-4 text-title font-semibold">
                 {item.color}
               </td>
-              <td className="px-6 py-4 text-title font-semibold">
-                {item.country}
+              <td className="px-6 py-4 text-title w-6 font-semibold">
+                <img src={item.img} alt={item.title} />
               </td>
               <td className="px-6 py-4 text-title font-semibold">
-                ${item.price}
+                {item.price} $
               </td>
               <td className="flex items-center gap-2 py-4 pr-6 justify-end">
                 <Button className={"p-2 bg-[#F7F7FF] text-primary hover:text-secondary hover:bg-[#1BC58D5F]"}>

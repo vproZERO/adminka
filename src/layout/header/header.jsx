@@ -13,7 +13,7 @@ const Header = () => {
   const exit = () => {
     Cookies.remove("user_token");
     navigate("/login", { replace: true });
-    toast.error("Вы вышли из аккаунта");
+    toast.success("Вы вышли из аккаунта");
   };
 
   return (
