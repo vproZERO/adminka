@@ -26,7 +26,7 @@ const Header = () => {
       </div>
       <Button
         onClick={exit}
-        className={"text-title font-bold text-sm bg-[#F7F7FF]"}
+        className={"text-title font-bold text-sm bg-[#F7F7FF] transition hover:-translate-y-2"}
         icon={<ExitIcon />}
         variant={"outline"}
       >

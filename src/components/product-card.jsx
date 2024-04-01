@@ -58,14 +58,14 @@ const ProductCard = ({ mutate }) => {
                 ${item.price}
               </td>
               <td className="flex items-center gap-2 py-4 pr-6 justify-end">
-                <Button className={"p-2 bg-[#F7F7FF]"}>
+                <Button className={"p-2 bg-[#F7F7FF] text-primary hover:text-secondary hover:bg-[#1BC58D5F]"}>
                   <Link to={`/add/edit/${item.id}`}>
                     <ProductEditIcon />
                   </Link>
                 </Button>
                 <Button
                   onClick={() => deleteItem(item.id)}
-                  className={"p-2 bg-[#F7F7FF]"}
+                  className={"p-2 bg-[#F7F7FF] text-primary hover:text-red hover:bg-[#F1419D5F]"}
                 >
                   <ProductDeleteIcon />
                 </Button>

@@ -205,7 +205,7 @@ const ProductsForm = ({ submit, invalidateValue }) => {
         <Button
           variant={"secondary"}
           type={"submit"}
-          className={"max-w-[120px]"}
+          className={'max-w-[120px] hover:bg-[#1BC58D5F] hover:text-secondary font-bold'}
         >
           Сохранить
         </Button>

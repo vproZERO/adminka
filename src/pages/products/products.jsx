@@ -24,7 +24,7 @@ const Products = () => {
 
       {data ? (
         <div className="w-full flex items-center my-7">
-          <Button variant={"secondary"}>
+          <Button variant={"secondary"} className={'hover:bg-[#1BC58D5F] hover:text-secondary font-bold'}>
             <Link to={"/add"}>Новый товар</Link>
           </Button>
         </div>
