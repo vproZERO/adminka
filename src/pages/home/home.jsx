@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       Home
-      <Content title={"Главная"} text={"Перейти"} />
+      <Content link={'/products'} title={"Главная"} text={"Перейти"} />
     </div>
   );
 };

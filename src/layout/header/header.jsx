@@ -20,13 +20,20 @@ const Header = () => {
     <div className="px-10 py-4 bg-white w-full shadow-lg flex items-center justify-between">
       <div>
         <h2 className="text-title font-extrabold mb-1 text-lg">Товары</h2>
-        <Link to={"/"} className="text-text font-bold text-xs">
-          Главная {location.pathname === "/" ? "" : location.pathname}
-        </Link>
+        <div className="flex items-center ">
+          <Link to={"/"} className="text-text font-bold text-xs">
+            Главная
+          </Link>
+          <Link to={location.pathname} className="text-text font-bold text-xs">
+            {location.pathname === "/" ? "" : location.pathname}
+          </Link>
+        </div>
       </div>
       <Button
         onClick={exit}
-        className={"text-title font-bold text-sm bg-[#F7F7FF] transition hover:-translate-y-2"}
+        className={
+          "text-title font-bold text-sm bg-[#F7F7FF] transition hover:-translate-y-2"
+        }
         icon={<ExitIcon />}
         variant={"outline"}
       >
