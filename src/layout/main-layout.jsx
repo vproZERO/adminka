@@ -13,8 +13,6 @@ import Header from "./header/header";
 const MainLayout = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  if (!Cookies.get("user_token"))
-    return <Navigate to={"/login"} replace={true} />;
 
   return (
     <div className="flex h-screen  items-center">
